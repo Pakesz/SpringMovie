@@ -3,18 +3,18 @@ package com.example.demo.model;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.SequenceGenerator;
 
 @Entity
 @Getter
 @Setter
-public class Movie {
-    // @Getter(AccessLevel.NONE) // erre nem generál
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "movie_generator") // 2. param a javas név
-    @SequenceGenerator(name = "movie_generator", sequenceName = "movie_seq")
-    private int id;
+@SequenceGenerator(name = "default_gen", sequenceName = "movie_seq", allocationSize = 1)
+public class Movie extends BaseEntity {
+
     private String director;
+
     private int length;
 
     @Column(length = 128) // ilyen hosszú lehet maxn

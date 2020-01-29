@@ -33,13 +33,10 @@ public class Bootstrap implements ApplicationListener<ContextRefreshedEvent> { /
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
         //Movies
         Movie movie = new Movie();
-        movie.setId(8);
         movie.setDirector("Proba");
         Movie movie2 = new Movie();
-        movie2.setId(8);
         movie2.setDirector("Proba2");
         Movie movie3 = new Movie();
-        movie3.setId(8);
         movie3.setDirector("Proba3");
 
 
@@ -52,13 +49,11 @@ public class Bootstrap implements ApplicationListener<ContextRefreshedEvent> { /
 
         //Appointments
         Appointment appointment1 = new Appointment();
-        appointment1.setId(1);
         appointment1.setClaimedSeats(2);
         appointment1.setProjectionId(1);
         appointment1.setUserId(3);
 
         Appointment appointment2 = new Appointment();
-        appointment2.setId(1);
         appointment2.setClaimedSeats(2);
         appointment2.setProjectionId(1);
         appointment2.setUserId(3);
@@ -72,13 +67,11 @@ public class Bootstrap implements ApplicationListener<ContextRefreshedEvent> { /
 
         //Projections
         Projection projection1 = new Projection();
-        projection1.setId(1);
         projection1.setMovieId(2);
         projection1.setSeats(40);
         projection1.setTime("2019-12-01 16:00:00");
 
         Projection projection2 = new Projection();
-        projection2.setId(2);
         projection2.setMovieId(1);
         projection2.setSeats(25);
         projection2.setTime("2019-12-01 19:30:00");

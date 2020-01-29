@@ -3,18 +3,21 @@ package com.example.demo.model;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.SequenceGenerator;
 
 @Entity
 @Getter
 @Setter
-@Table(name = "Appointments", schema = "public") // ez lesz a neve, public sémába kerül.
-public class Appointment {
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "appointment_generator") // 2. param a javas név
-    @SequenceGenerator(name = "appointment_generator", sequenceName = "appointment_seq") // ez a sequencia jön létre a postgre-ban ténylegesen
-    private Integer id;
+@SequenceGenerator(name = "default_gen", sequenceName = "appointment_seq", allocationSize = 1)
+public class Appointment extends BaseEntity {
+
     private Integer claimedSeats;
+
+    //TODO @OneToOne, @OneToMany, @ManyToMany...
     private Integer projectionId;
+
+    //TODO @OneToOne, @OneToMany, @ManyToMany...
     private Integer userId;
+
 }

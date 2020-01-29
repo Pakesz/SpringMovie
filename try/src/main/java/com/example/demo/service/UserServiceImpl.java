@@ -47,28 +47,10 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public Boolean addNewUser(String name, String email, String password, Integer status) {
-        Boolean bool = userRepository.addNewUser(name, email, password, status);
-        return bool;
+    public User save(String name, String email, String password, Integer status) {
+        //TODO
+        User user = userRepository.save(new User());
+        return user;
     }
 
-
-    /*
-    public User findById(int id) {
-        for(int i=0; i<list.size(); i++){
-            if(list.get(i).getId() == id){
-                return list.get(i);
-            }
-        }
-        return null;
-    }
-
-    public User findByStatus(int id) {
-        for(int i=0; i<list.size(); i++){
-            if(list.get(i).getStatus() == id){
-                return list.get(i);
-            }
-        }
-        return null;
-    } */
 }

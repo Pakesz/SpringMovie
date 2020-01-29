@@ -3,20 +3,18 @@ package com.example.demo.model;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.SequenceGenerator;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Positive;
 
 @Entity
 @Getter
 @Setter
-public class User {
-/*
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_generator") // 2. param a javas név
-    @SequenceGenerator(name = "user_generator", sequenceName = "user_seq")
-    private int id;
-*/
+@SequenceGenerator(name = "default_gen", sequenceName = "user_seq", allocationSize = 1)
+public class User extends BaseEntity {
+
     @Column(length = 64)
     private String name;
 

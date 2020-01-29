@@ -12,5 +12,5 @@ public interface UserService {
 
     List<User> findByStatus(Integer status);
 
-    Boolean addNewUser(String name, String email, String password, Integer status);
+    User save(String name, String email, String password, Integer status);
 }

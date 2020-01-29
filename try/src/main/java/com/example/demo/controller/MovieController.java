@@ -4,7 +4,6 @@ import com.example.demo.model.Movie;
 import com.example.demo.service.MovieServiceImpl;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import java.util.List;
 
@@ -22,13 +21,6 @@ public class MovieController {
     @GetMapping(value = "/movies") //ugyan az mint fent. van postmapping stb
     public List<Movie> movie(){
         return movieService.findAll();
-
-        /*
-        Movie movie = new Movie();
-        movie.setId(8);
-        movie.setDirector("Proba");
-        return movie;
-*/
     }
 
 
